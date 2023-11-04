@@ -173,35 +173,16 @@ Copy the output record from the mint transition and paste it into the `./inputs/
 
 You can see here, one account now has 90 tokens and the other has 10, meaning we succesfully transfered 10 tokens.
 
-### Step 3. Getting our Record Plaintext
-
-We need to retrieve our Wallet's current record plaintext to deploy our program. I prefer to use the Leo Wallet to do this
-
-1. Open the Leo Wallet
-2. Click on the Wallet you created in the Prerequisites
-3. Click on the Activities tab and click into the most recent transaction, this opens a new window in a block explorer
-4. You should see this page
-   ![](./transitions.png)
-5. Click on the first transition ID, this will open a new page
-6. Connect your wallet, scroll down and retrieve your record data, it should be highlighted in green text, save this text for the next step
-
-### Step 4. Create our Deployment Script
+### Step 3. Create our Deployment Script
 
 We need a few environment variables set to deploy our program. We can create a script to set these variables for us.
 
 Create a new file named `deploy.sh` in the project directory and copy the following into the file
 
 ```
-
-WALLETADDRESS=""
 PRIVATEKEY=""
 
 APPNAME="<project_name>"
-PATHTOAPP=$(realpath -q $APPNAME)
-
-RECORD="{
-RECORD PLAINTEXT HERE
-}"
 
 cd .. && snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}" --query "https://vm.aleo.org/api" --path "./${APPNAME}/build/" --broadcast "https://vm.aleo.org/api/testnet3/transaction/broadcast" --fee 1000000 --record "${RECORD}"``
 
@@ -209,7 +190,7 @@ cd .. && snarkos developer deploy "${APPNAME}.aleo" --private-key "${PRIVATEKEY}
 
 Fill out the variables with the appropriate values and save the file
 
-### Step 5. Execute the Script to Deploy our Program
+### Step 4. Execute the Script to Deploy our Program
 
 Run the deploy script
 
