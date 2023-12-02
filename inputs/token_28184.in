@@ -1,0 +1,12 @@
+// The program input for token_28184/src/main.leo
+[mint]
+balance: u32 = 100u32;
+
+[transfer]
+receiver: address = aleo1yn6halw6astkc8jsl88sukelef3e8xrawugfjtx7kjcuuxdm6spsdtc249;
+amount: u32 = 10u32;
+input: Token = Token{
+  owner: aleo1u20wjta3j0g69pt23wn20vpv0pa28ma97fukexqmuw39mgt2ryrquz5mzs,
+  balance: 100u32,
+  _nonce: 292936196563333932009136915121914006898609101920119023221288671394356999564group
+};
